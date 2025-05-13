@@ -7,19 +7,6 @@ class Juego{
     public static int intentos;    
     public static bool termino;    
     public static bool gano;    
-    
-    public static void inicializarJuego(){
-
-        Random palabraRandom=new Random();
-        List<string>palabras = new List<string>(){"SOL", "LUNA", "AGUA", "FUEGO", "TIERRA", "AIRE", "VIDA", "AMOR", "TIEMPO", "DORMIR", "CAMINO", "BOSQUE", "MAR", "ESTRELLA", "ALEGRIA", "ESPERANZA", "FORTALEZA", "LIBERTAD", "SILENCIO", "LUZ"};
-        
-        palabra = palabras[palabraRandom.Next(palabras.Count)];        
-        palabraParcial=new string('_', palabra.Length).ToCharArray();;
-        usadas=new List<char>();
-        intentos=0;
-        termino=false;
-        gano=false;
-    }
     public static string getPalabra(){
         return palabra;
     }
@@ -38,6 +25,16 @@ class Juego{
     public static bool Gano(){
         return gano;
     }
+    public static void inicializarJuego(){
+
+        palabra=generarPalabra();    
+        palabraParcial=new string('_', palabra.Length).ToCharArray();;
+        usadas=new List<char>();
+        intentos=0;
+        termino=false;
+        gano=false;
+    }
+    
     public static void ArriesgarLetra(char Larriesgada)
     {
         Larriesgada = char.ToUpper(Larriesgada);
@@ -87,5 +84,11 @@ class Juego{
                 termino=true;
             }
         }
+    }
+    public static string generarPalabra(){
+        Random palabraRandom=new Random();
+        List<string>palabras = new List<string>(){"SOL", "LUNA", "AGUA", "FUEGO", "TIERRA", "AIRE", "VIDA", "AMOR", "TIEMPO", "DORMIR", "CAMINO", "BOSQUE", "MAR", "ESTRELLA", "ALEGRIA", "ESPERANZA", "FORTALEZA", "LIBERTAD", "SILENCIO", "LUZ"};
+        palabra = palabras[palabraRandom.Next(palabras.Count)];
+        return palabra;
     }
 }
