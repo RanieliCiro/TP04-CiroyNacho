@@ -31,7 +31,7 @@ public class HomeController : Controller
                 return RedirectToAction("Win");
             }
             else{
-                return RedirectToAction("Loose");
+                return RedirectToAction("Lose");
             }
         }
 
@@ -52,9 +52,9 @@ public class HomeController : Controller
         ViewBag.palabra=Juego.getPalabra();
         return View("Win");
     }
-    public IActionResult Loose()
+    public IActionResult Lose()
     {
         ViewBag.palabra=Juego.getPalabra();
-        return View("Loose");
+        return View("Lose");
     }
 }

@@ -39,7 +39,7 @@ class Juego{
     {
         Larriesgada = char.ToUpper(Larriesgada);
                
-        if (!usadas.Contains(Larriesgada) || termino==false)
+        if (!usadas.Contains(Larriesgada) && termino==false)
         {
             usadas.Add(Larriesgada);
             bool adivino=false;

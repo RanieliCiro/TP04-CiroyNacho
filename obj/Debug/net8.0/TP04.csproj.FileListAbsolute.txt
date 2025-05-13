@@ -82,3 +82,4 @@ Z:\2025\PROGRAMACION\TP04\TP04\obj\Debug\net8.0\refint\TP04.dll
 Z:\2025\PROGRAMACION\TP04\TP04\obj\Debug\net8.0\TP04.pdb
 Z:\2025\PROGRAMACION\TP04\TP04\obj\Debug\net8.0\TP04.genruntimeconfig.cache
 Z:\2025\PROGRAMACION\TP04\TP04\obj\Debug\net8.0\ref\TP04.dll
+Z:\2025\PROGRAMACION\TP04\TP04\obj\Debug\net8.0\TP04.sourcelink.json
