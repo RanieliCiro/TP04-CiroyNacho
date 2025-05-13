@@ -87,7 +87,17 @@ class Juego{
     }
     public static string generarPalabra(){
         Random palabraRandom=new Random();
-        List<string>palabras = new List<string>(){"SOL", "LUNA", "AGUA", "FUEGO", "TIERRA", "AIRE", "VIDA", "AMOR", "TIEMPO", "DORMIR", "CAMINO", "BOSQUE", "MAR", "ESTRELLA", "ALEGRIA", "ESPERANZA", "FORTALEZA", "LIBERTAD", "SILENCIO", "LUZ"};
+        List<string> palabras = new List<string>() {
+            "SOL", "LUNA", "AGUA", "FUEGO", "TIERRA", "AIRE", "VIDA", "AMOR", "TIEMPO", "DORMIR",
+            "CAMINO", "BOSQUE", "MAR", "ESTRELLA", "ALEGRIA", "ESPERANZA", "FORTALEZA", "LIBERTAD", "SILENCIO", "LUZ",
+            "PAZ", "ILUSION", "CIELO", "NUBE", "LLUVIA", "VIENTO", "ARENA", "COLINA", "VALLE", "RIO",
+            "FLOR", "ARBOL", "FRUTO", "RAIZ", "TRUENO", "RELAMPAGO", "NIEVE", "HIELO", "FLORES", "HOJAS",
+            "SOMBRA", "FANTASIA", "REALIDAD", "CORAZON", "ALMA", "MENTE", "CUERPO", "ESPIRITU", "ENERGIA", "DESTINO",
+            "SENDEROS", "HORIZONTE", "OCASO", "AMANECER", "ATARDECER", "NOCHE", "DIA", "INVIERNO", "VERANO", "ESTACION",
+            "PRIMAVERA", "FELICIDAD", "TRISTEZA", "VALENTIA", "MIEDO", "ENCUENTRO", "DESPEDIDA", "RECUERDO", "SENTIR", "ANHELAR",
+            "CRECER", "APRENDER", "CAMBIAR", "RENACER", "IMAGINAR", "CREAR", "VOLAR", "CAER", "LEVANTAR", "ANDAR",
+            "DESCANSAR", "ABRAZO", "MIRADA", "VOZ", "PALABRA", "GRITO", "SUSPIRO", "CANTO", "MUSICA", "POESIA",
+            "HISTORIA", "LEYENDA", "CAMPO", "CIUDAD", "CAMINAR", "CORRER", "NADAR", "VIVIR", "EXISTIR", "LUMINOSIDAD"}; 
         palabra = palabras[palabraRandom.Next(palabras.Count)];
         return palabra;
     }
