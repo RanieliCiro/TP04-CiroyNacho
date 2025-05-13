@@ -1,0 +1,25 @@
+<body>
+    <header><h1>Ahorcado</h1></header>
+    <main>
+        <section>
+            <h2>@ViewBag.palabraParcial</h2>
+            <h2>Letras utilizadas: @string.Join(" ", (List<char>)ViewBag.usadas) </h2>
+            <h2>Intentos Errados: @ViewBag.intentos</h2>
+        </section>
+        <section>
+            <div>
+                <form action="@Url.Action("ArriesgarLetra", "Home")">
+                    <label for="Larriesgada">Arriesgar Letra</label><br>
+                    <input type="text" name="Larriesgada" maxlength="1"><br>
+                    <input type="submit" value="Enviar Letra">
+                </form>
+
+                <form action="@Url.Action("ArriesgarPalabra", "Home")">
+                    <label for="Parriesgada">Arriesgar Palabra</label><br>
+                    <input type="text" name="Parriesgada"><br>
+                    <input type="submit" value="Enviar Palabra">
+                </form>
+            </div>
+        </section>
+    </main>
+</body>

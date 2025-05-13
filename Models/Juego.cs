@@ -1,0 +1,91 @@
+using System.ComponentModel;
+
+class Juego{
+    public static string palabra;    
+    public static char[] palabraParcial;    
+    public static List<char>usadas;    
+    public static int intentos;    
+    public static bool termino;    
+    public static bool gano;    
+    
+    public static void inicializarJuego(){
+
+        Random palabraRandom=new Random();
+        List<string>palabras = new List<string>(){"SOL", "LUNA", "AGUA", "FUEGO", "TIERRA", "AIRE", "VIDA", "AMOR", "TIEMPO", "DORMIR", "CAMINO", "BOSQUE", "MAR", "ESTRELLA", "ALEGRIA", "ESPERANZA", "FORTALEZA", "LIBERTAD", "SILENCIO", "LUZ"};
+        
+        palabra = palabras[palabraRandom.Next(palabras.Count)];        
+        palabraParcial=new string('_', palabra.Length).ToCharArray();;
+        usadas=new List<char>();
+        intentos=0;
+        termino=false;
+        gano=false;
+    }
+    public static string getPalabra(){
+        return palabra;
+    }
+    public static string getPalabraParcial() {
+        return string.Join(" ", palabraParcial);
+    }
+    public static List<char> getLetrasUsadas(){
+        return usadas;
+    }
+    public static int getIntentos(){
+        return intentos;
+    }
+    public static bool Termino(){
+        return termino;
+    }
+    public static bool Gano(){
+        return gano;
+    }
+    public static void ArriesgarLetra(char Larriesgada)
+    {
+        Larriesgada = char.ToUpper(Larriesgada);
+               
+        if (!usadas.Contains(Larriesgada) || termino==false)
+        {
+            usadas.Add(Larriesgada);
+            bool adivino=false;
+            for (int i = 0; i < palabra.Length; i++)
+            {
+                if (palabra[i] == Larriesgada)
+                {
+                    palabraParcial[i] = Larriesgada;
+                    adivino = true;
+                }
+            }
+            if (!palabraParcial.Contains('_'))
+            {
+                termino = true;
+                gano = true;
+            }
+            if (!adivino)
+            {
+                intentos++;
+            }
+            if (intentos >= 5)
+            {
+                termino = true;
+            }
+        }
+ 
+    }
+    public static void ArriesgarPalabra(string Parriesgada)
+    {
+        string palabraArriesgada = Parriesgada.ToUpper();
+
+        if (termino==false)
+        {                       
+            if (palabraArriesgada == palabra)
+            {
+                palabraParcial = palabra.ToCharArray();
+                termino = true;
+                gano = true;
+            }
+            else
+            {
+                termino=true;
+            }
+        }
+    }
+}

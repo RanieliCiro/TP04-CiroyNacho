@@ -1,0 +1,19 @@
+<body>
+    <header><h1>Ahorcado</h1></header>
+    <main>
+        <section>
+            <div>
+                <h1>¡Perdiste!</h1>
+                <img src="/imagenes/mal.png" alt="mal">                
+                <h2>La palabra secreta era @ViewBag.palabra</h2>
+            </div>
+        </section>
+        <section>
+            <div>
+                <nav>
+                    <a href="@Url.Action("Index", "Home")">Volver al Inicio</a>
+                </nav> 
+            </div>
+        </section>            
+    </main>    
+</body>
