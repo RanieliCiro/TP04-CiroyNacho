@@ -15,26 +15,23 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        Juego.inicializarJuego();
+        Juego.iniciarJuego();
         return View();
     }
     public IActionResult Jugar()
     {   
         ViewBag.palabraParcial=Juego.getPalabraParcial();
-        ViewBag.usadas=Juego.getLetrasUsadas();
-        ViewBag.intentos=Juego.getIntentos();
-        ViewBag.termino=Juego.Termino();
-        ViewBag.gano=Juego.Gano();
-
-        if(Juego.Termino()){
-            if(Juego.Gano()){
+        ViewBag.usadas=Juego.usadas;
+        ViewBag.intentos=Juego.intentos;
+        ViewBag.cantLetrasPalabra=Juego.palabraParcial.Length;
+        if(Juego.termino){
+            if(Juego.gano){
                 return RedirectToAction("Win");
             }
             else{
                 return RedirectToAction("Lose");
             }
         }
-
         return View("Jugar");
     }
     public IActionResult ArriesgarLetra(string Larriesgada)
@@ -49,12 +46,12 @@ public class HomeController : Controller
     }
     public IActionResult Win()
     {
-        ViewBag.palabra=Juego.getPalabra();
+        ViewBag.palabra=Juego.palabra;
         return View("Win");
     }
     public IActionResult Lose()
     {
-        ViewBag.palabra=Juego.getPalabra();
+        ViewBag.palabra=Juego.palabra;
         return View("Lose");
     }
 }

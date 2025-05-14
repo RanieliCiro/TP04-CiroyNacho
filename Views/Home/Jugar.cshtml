@@ -16,7 +16,7 @@
 
                 <form action="@Url.Action("ArriesgarPalabra", "Home")">
                     <label for="Parriesgada">Arriesgar Palabra</label><br>
-                    <input type="text" name="Parriesgada"><br>
+                    <input type="text" name="Parriesgada" maxlength=@ViewBag.cantLetrasPalabra><br>
                     <input type="submit" value="Enviar Palabra">
                 </form>
             </div>

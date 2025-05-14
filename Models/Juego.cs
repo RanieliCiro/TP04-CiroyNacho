@@ -1,32 +1,33 @@
 using System.ComponentModel;
 
 class Juego{
-    public static string palabra; 
-    public static string getPalabra(){
+    public static string palabra;
+    public static string generarPalabraRandom(){
+        Random palabraRandom=new Random();
+        List<string> palabras = new List<string>() {"SOL", "LUNA", "AGUA", "FUEGO", "TIERRA", "AIRE", "VIDA", "AMOR", "TIEMPO", "DORMIR",
+            "CAMINO", "BOSQUE", "MAR", "ESTRELLA", "ALEGRIA", "ESPERANZA", "FORTALEZA", "LIBERTAD", "SILENCIO", "LUZ",
+            "PAZ", "ILUSION", "CIELO", "NUBE", "LLUVIA", "VIENTO", "ARENA", "COLINA", "VALLE", "RIO",
+            "FLOR", "ARBOL", "FRUTO", "RAIZ", "TRUENO", "RELAMPAGO", "NIEVE", "HIELO", "FLORES", "HOJAS",
+            "SOMBRA", "FANTASIA", "REALIDAD", "CORAZON", "ALMA", "MENTE", "CUERPO", "ESPIRITU", "ENERGIA", "DESTINO",
+            "SENDEROS", "HORIZONTE", "OCASO", "AMANECER", "ATARDECER", "NOCHE", "DIA", "INVIERNO", "VERANO", "ESTACION",
+            "PRIMAVERA", "FELICIDAD", "TRISTEZA", "VALENTIA", "MIEDO", "ENCUENTRO", "DESPEDIDA", "RECUERDO", "SENTIR", "ANHELAR",
+            "CRECER", "APRENDER", "CAMBIAR", "RENACER", "IMAGINAR", "CREAR", "VOLAR", "CAER", "LEVANTAR", "ANDAR",
+            "DESCANSAR", "ABRAZO", "MIRADA", "VOZ", "PALABRA", "GRITO", "SUSPIRO", "CANTO", "MUSICA", "POESIA",
+            "HISTORIA", "LEYENDA", "CAMPO", "CIUDAD", "CAMINAR", "CORRER", "NADAR", "VIVIR", "EXISTIR", "LUMINOSIDAD"}; 
+        palabra = palabras[palabraRandom.Next(palabras.Count)];
         return palabra;
-    }   
+    }
     public static char[] palabraParcial;  
     public static string getPalabraParcial() {
         return string.Join(" ", palabraParcial);
     }  
-    public static List<char>usadas;
-    public static List<char> getLetrasUsadas(){
-        return usadas;
-    }    
-    public static int intentos;  
-    public static int getIntentos(){
-        return intentos;
-    }
-    public static bool termino; 
-    public static bool Termino(){
-        return termino;
-    }   
+    public static List<char>usadas;       
+    public static int intentos;      
+    public static bool termino;     
     public static bool gano;    
-    public static bool Gano(){
-        return gano;
-    }   
-    public static void inicializarJuego(){
-        palabra=generarPalabra();    
+      
+    public static void iniciarJuego(){
+        palabra=generarPalabraRandom();    
         palabraParcial=new string('_', palabra.Length).ToCharArray();;
         usadas=new List<char>();
         intentos=0;
@@ -68,20 +69,5 @@ class Juego{
                 termino=true;
             }
         }
-    }
-    public static string generarPalabra(){
-        Random palabraRandom=new Random();
-        List<string> palabras = new List<string>() {"SOL", "LUNA", "AGUA", "FUEGO", "TIERRA", "AIRE", "VIDA", "AMOR", "TIEMPO", "DORMIR",
-            "CAMINO", "BOSQUE", "MAR", "ESTRELLA", "ALEGRIA", "ESPERANZA", "FORTALEZA", "LIBERTAD", "SILENCIO", "LUZ",
-            "PAZ", "ILUSION", "CIELO", "NUBE", "LLUVIA", "VIENTO", "ARENA", "COLINA", "VALLE", "RIO",
-            "FLOR", "ARBOL", "FRUTO", "RAIZ", "TRUENO", "RELAMPAGO", "NIEVE", "HIELO", "FLORES", "HOJAS",
-            "SOMBRA", "FANTASIA", "REALIDAD", "CORAZON", "ALMA", "MENTE", "CUERPO", "ESPIRITU", "ENERGIA", "DESTINO",
-            "SENDEROS", "HORIZONTE", "OCASO", "AMANECER", "ATARDECER", "NOCHE", "DIA", "INVIERNO", "VERANO", "ESTACION",
-            "PRIMAVERA", "FELICIDAD", "TRISTEZA", "VALENTIA", "MIEDO", "ENCUENTRO", "DESPEDIDA", "RECUERDO", "SENTIR", "ANHELAR",
-            "CRECER", "APRENDER", "CAMBIAR", "RENACER", "IMAGINAR", "CREAR", "VOLAR", "CAER", "LEVANTAR", "ANDAR",
-            "DESCANSAR", "ABRAZO", "MIRADA", "VOZ", "PALABRA", "GRITO", "SUSPIRO", "CANTO", "MUSICA", "POESIA",
-            "HISTORIA", "LEYENDA", "CAMPO", "CIUDAD", "CAMINAR", "CORRER", "NADAR", "VIVIR", "EXISTIR", "LUMINOSIDAD"}; 
-        palabra = palabras[palabraRandom.Next(palabras.Count)];
-        return palabra;
-    }
+    }    
 }
