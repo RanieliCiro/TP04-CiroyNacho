@@ -11,7 +11,10 @@ html {
 .victoria{
   background-color: rgb(43, 145, 34);
 }
-.victoria header, .perdida header{
+.victoria header{
+  background-color: rgb(43, 145, 34);
+}
+.perdida header{
   background-color: rgb(211, 52, 52);
 }
 .perdida{

@@ -10,13 +10,13 @@
             <div>
                 <form action="@Url.Action("ArriesgarLetra", "Home")">
                     <label for="Larriesgada">Arriesgar Letra</label><br>
-                    <input type="text" name="Larriesgada" maxlength="1"><br>
+                    <input type="text" name="Larriesgada" maxlength="1" required><br>
                     <input type="submit" value="Enviar Letra">
                 </form>
 
                 <form action="@Url.Action("ArriesgarPalabra", "Home")">
                     <label for="Parriesgada">Arriesgar Palabra</label><br>
-                    <input type="text" name="Parriesgada" maxlength=@ViewBag.cantLetrasPalabra><br>
+                    <input type="text" name="Parriesgada" maxlength=@ViewBag.cantLetrasPalabra required><br>
                     <input type="submit" value="Enviar Palabra">
                 </form>
             </div>
